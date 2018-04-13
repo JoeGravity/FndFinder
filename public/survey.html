@@ -178,8 +178,8 @@
           <h2 class="modal-title"><strong>Best Match</strong></h2>
         </div>
         <div class="modal-body">
-          <h2 id="match-name"></h2>
-          <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+          <h2 id="match-name">Joe</h2>
+          <img id="match-img" src="http://joegravity.com/images/joe2013.jpg" alt="Your closest match!">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -225,7 +225,6 @@
         });
 
         $(".chosen-select").each(function() {
-
           if ($(this).val() === "") {
             isValid = false;
           }
@@ -235,6 +234,10 @@
 
       // If all required fields are filled
       if (validateForm()) {
+
+                  $("#results-modal").modal("toggle");
+
+
         // Create an object for the user"s data
         var userData = {
           name: $("#name").val(),
