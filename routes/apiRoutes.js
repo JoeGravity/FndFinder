@@ -23,26 +23,25 @@ module.exports = function (app) {
   });
 
   
-  // function closestMatch(friendsArray) {
-  //   for (var i = 0; i < friendsArray.length; i++) {
-  //     if (person.totalDiff < totalDiff) {
-  //       person.name = $("#match-name");
-  //       person.photo = $("#match-img");
-  //     }
-  //   }
-  // };
+  function closestMatch(friends) {
+    for (var i = 0; i < friends.length; i++) {
+      if (person.totalDiff < totalDiff) {
+        person.name = $("#match-name");
+        person.photo = $("#match-img");
+      }
+    } 
+  };
 
   app.post("/api/friends", function (req, res) {
 
-    // for (var i = 0; i < friendsArray.length; i++) {
-    //   var person = friendsArray[i];
-    //   var eachDiff = parseInt(person.score) - parseInt(userData.score);
-    //   var totalDiff = abs(eachDiff)++;
-    // }
-    //     //    * The closest match will be the user with the least amount of difference.
-    // closestMatch();
-
-
+    for (var i = 0; i < friends.length; i++) {
+      var userData;
+      var person = friends[i];
+      var eachDiff = parseInt(person.scores) - parseInt(userData.scores);
+      var totalDiff = abs(eachDiff)++;
+    }
+        //    * The closest match will be the user with the least amount of difference.
+    closestMatch();
 
     friends.push(req.body);
   });
