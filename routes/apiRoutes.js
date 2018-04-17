@@ -23,25 +23,31 @@ module.exports = function (app) {
   });
 
   
-  function closestMatch(friends) {
-    for (var i = 0; i < friends.length; i++) {
-      if (person.totalDiff < totalDiff) {
-        person.name = $("#match-name");
-        person.photo = $("#match-img");
-      }
-    } 
-  };
+  // function closestMatch(friends) {
+  //   for (var i = 0; i < friends.length; i++) {
+  //     if (person.totalDiff < totalDiff) {
+  //       person.name = $("#match-name");
+  //       person.photo = $("#match-img");
+  //     }
+  //   } 
+  // };
 
   app.post("/api/friends", function (req, res) {
-
+    console.log(req.body);
+var totalDiff;
+var closestFriend
     for (var i = 0; i < friends.length; i++) {
-      var userData;
+      // var userData;
       var person = friends[i];
-      var eachDiff = parseInt(person.scores) - parseInt(userData.scores);
-      var totalDiff = abs(eachDiff)++;
+      for (var k = 0; k < person.scores.length; k++) {
+        // here's where we itereate thru scores
+      }
+
+      // var eachDiff = parseInt(person.scores) - parseInt(req.body.scores);
+        // var totalDiff = Math.abs(eachDiff)++;
     }
         //    * The closest match will be the user with the least amount of difference.
-    closestMatch();
+    // closestMatch();
 
     friends.push(req.body);
   });
