@@ -19,6 +19,7 @@ module.exports = function (app) {
 
   app.get("/api/friends", function (req, res) {
     res.json(friends);
+    console.log(friends);
   });
 
   // function closestMatch(friends) {
@@ -37,6 +38,7 @@ module.exports = function (app) {
 
   app.post("/api/friends", function (req, res) {
     console.log(req.body);
+    var userData;
     var totalDiff;
     var closestFriend
     for (var i = 0; i < friends.length; i++) {
@@ -44,18 +46,17 @@ module.exports = function (app) {
       var person = friends[i];
       for (var k = 0; k < person.scores.length; k++) {
         // here's where we itereate thru scores
-        var eachDiff = parseInt(person.scores) - parseInt(userData.scores);
+        var eachDiff = parseInt(person.scores[k]) - parseInt(req.body.scores[k]);
         // var totalDiff = (eachDiff + Math.abs(eachDiff))++;
         var totalDiff = eachDiff++;
         if (person.totalDiff < totalDiff) {
           // $("#match-name") = person.name;
           // $("#match-img") = person.photo;
-          return person;
         }
-
       }
     }
     friends.push(req.body);
+    res.end();
   });
 
   //    * The closest match will be the user with the least amount of difference.
