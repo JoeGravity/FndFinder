@@ -49,6 +49,7 @@ module.exports = function (app) {
         var eachDiff = parseInt(person.scores[k]) - parseInt(req.body.scores[k]);
         // var totalDiff = (eachDiff + Math.abs(eachDiff))++;
         var totalDiff = eachDiff++;
+        console.log (eachDiff);
         if (person.totalDiff < totalDiff) {
           // $("#match-name") = person.name;
           // $("#match-img") = person.photo;
